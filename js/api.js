@@ -4,6 +4,7 @@ const payload = client_id + ":" + client_secret;
 //const encodedPayload = Buffer.from(payload).toString("base64");
 const encodedPayload = utf8_to_b64(payload);
 var access_token = "";
+var tracks = "";
 
 fetch("https://accounts.spotify.com/api/token", {
   method: "POST",
@@ -23,6 +24,22 @@ fetch("https://accounts.spotify.com/api/token", {
   {
     console.log(JSON.stringify(response))
     access_token = response.access_token;
+    //console.log(access_token);
+
+    // trying to get tracks
+    fetch('https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb', {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + access_token,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) =>
+      {
+        console.log(JSON.stringify(response))
+        tracks = response.tracks;
+      });
+
   });
 
 // functions to change strings to base64 and vice versa
@@ -33,3 +50,6 @@ function utf8_to_b64(str) {
 function b64_to_utf8(str) {
   return decodeURIComponent(escape(window.atob(str)));
 }
+
+// if you want to see access_token outside of the fetch
+//setTimeout(() => console.log(access_token), 1000);
