@@ -6,6 +6,7 @@ const encodedPayload = utf8_to_b64(payload);
 var access_token = "";
 var tracks = "";
 
+// fetching the Spotify API
 fetch("https://accounts.spotify.com/api/token", {
   method: "POST",
   headers: {
@@ -27,7 +28,7 @@ fetch("https://accounts.spotify.com/api/token", {
     //console.log(access_token);
 
     // trying to get tracks
-    fetch('https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb', {
+    fetch('https://api.spotify.com/v1/tracks/02nhDSWvcXYALyVkth2oXd?market=CA', {
       method: "GET",
       headers: {
         Authorization: "Bearer " + access_token,
@@ -36,8 +37,8 @@ fetch("https://accounts.spotify.com/api/token", {
       .then((response) => response.json())
       .then((response) =>
       {
-        console.log(JSON.stringify(response))
-        tracks = response.tracks;
+        console.log(JSON.stringify(response.album.total_tracks))
+        //tracks = response.tracks; 
       });
 
   });
