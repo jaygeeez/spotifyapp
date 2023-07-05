@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta name="author" content="Joshua Garvida" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta charset="utf-8">
-  <title>Joshua Garvida</title>
-
-  <!--CSS Files-->
-  <!-- <link rel="stylesheet" media="screen" href="css/styles.css" /> -->
-
-  <!--The Font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet" />
-
-  <!--Javascript Files-->
-  <script type="text/javascript" src="js/api.js" async></script>
-  <script type="text/javascript" src="js/script.js" async></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Web API Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+  <script src="js/api.js"></script>
 </head>
 
-<body>
-  <h1>Display your Spotify profile data</h1>
-
-  <section id="profile">
-    <h2>Logged in as <span id="displayName"></span></h2>
-    <span id="avatar"></span>
-    <ul>
-      <li>User ID: <span id="id"></span></li>
-      <li>Email: <span id="email"></span></li>
-      <li>Spotify URI: <a id="uri" href="#"></a></li>
-      <li>Link: <a id="url" href="#"></a></li>
-      <li>Profile Image: <span id="imgUrl"></span></li>
-    </ul>
-    <iframe width="560" height="315" src="https://play.library.utoronto.ca/embed/d83c7ab0ac41c676a04a734f876243ec"
-      frameborder="0" allowfullscreen> iframe not supported </iframe>
-  </section>
+<body onload="onPageLoad()">
+  <div id="tokenSection">
+    <div class="center">
+      <h1>How Well Do You Know <span class="green">Your</span> Music?</h1>
+      <div id="startButton" onclick="requestAuthorization()">
+        <h3>Connect to Spotify</h3>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p>Score: 0</p>
+  </div>
+  <div id="song_text">
+  </div>
+  <div class="grid2x2">
+    <div id="option_1" onclick="callQuestion()">
+    </div>
+    <div id="option_2" onclick="callQuestion()">
+    </div>
+    <div id="option_3" onclick="callQuestion()">
+    </div>
+    <div id="option_4" onclick="callQuestion()">
+    </div>
+  </div>
 </body>
 
 </html>
