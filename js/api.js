@@ -159,23 +159,23 @@ function callQuestion() {
         .then((response) =>
         {
             // Random Number Thing
-            let correct_artist = getRandomNum(0, 49);
+            let correct_number = getRandomNum(0, 49);
+            let correct_artist = getArtist(response, correct_number);
             let artists = []; 
-            artists.push(getArtist(response, correct_artist));
+            artists.push(correct_artist);
 
             // Repeat until there are four total answers
             while(artists.length < 4) {
-                let wrong_artist = getRandomNum(0, 49);
-                let same_artists = 0;
+                let wrong_number = getRandomNum(0, 49);
 
                 // Doesn't let the right answer appear twice
-                if (getArtist(response, wrong_artist) != artists[0]) {
-                    artists.push(getArtist(response, wrong_artist));
+                if (getArtist(response, wrong_number) != artists[0]) {
+                    artists.push(getArtist(response, wrong_number));
                 }
             } 
 
             shuffle(artists);
-            let song_title = JSON.stringify(response.items[correct_artist].track.name);
+            let song_title = JSON.stringify(response.items[correct_number].track.name);
 
             // Who is the artist of song
             document.getElementById("song_text").innerHTML = "Who is the artist of: " + song_title + "?";
