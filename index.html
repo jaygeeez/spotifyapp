@@ -12,27 +12,20 @@
 </head>
 
 <body onload="onPageLoad()">
-  <div id="tokenSection">
-    <div class="center">
-      <h1>How Well Do You Know <span class="green">Your</span> Music?</h1>
-      <div id="startButton" onclick="requestAuthorization()">
-        <h3>Connect to Spotify</h3>
-      </div>
+  <div id="tokenSection" class="center">
+    <h1>How Well Do You Know <span class="green">Your</span> Music?</h1>
+    <div id="startButton" onclick="requestAuthorization()">
+      <h3>Connect to Spotify</h3>
     </div>
   </div>
-  <div>
-    <p>Score: 0</p>
-  </div>
-  <div id="song_text">
-  </div>
-  <div class="grid2x2">
-    <div id="option_1" onclick="callQuestion()">
-    </div>
-    <div id="option_2" onclick="callQuestion()">
-    </div>
-    <div id="option_3" onclick="callQuestion()">
-    </div>
-    <div id="option_4" onclick="callQuestion()">
+  <div id="deviceSection">
+    <div id="score"></div>
+    <div id="song_text"></div>
+    <div class="grid2x2">
+      <div id="option_1" onclick="callQuestion(this.id)"></div>
+      <div id="option_2" onclick="callQuestion(this.id)"></div>
+      <div id="option_3" onclick="callQuestion(this.id)"></div>
+      <div id="option_4" onclick="callQuestion(this.id)"></div>
     </div>
   </div>
 </body>

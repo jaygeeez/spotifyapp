@@ -1,56 +1,64 @@
-body{
-    background-color: #191414;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
-    margin: 0px;
+body {
+  background-color: #191414;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  margin: 0px;
 }
 
 #tokenSection {
-    display: none;
+  display: none;
+}
+
+#deviceSection {
+  display: none;
 }
 
 .center {
-    top: 50%;
-    left: 50%;
+  position: fixed;
+  width: 60vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #startButton {
-    background-color: #1D8954;
-    text-align: center;
-    width: 30vw;
-    padding: 20px;
+  background-color: #1d8954;
+  text-align: center;
+  width: 30vw;
+  padding: 20px;
 }
 
 .green {
-    color: #1D8954;
+  color: #1d8954;
 }
 
 .grid2x2 {
-    min-height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-
-.grid2x2 > div {
-    background-color: #1D8954;
-    font-size: 2vw;
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-    width: 50%; 
-    display: flex;
-    flex-basis: calc(50% - 40px);  
-    justify-content: center;
-    flex-direction: column;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.grid2x2 > div:hover, #startButton:hover {
-    background-color: #187448;
-    cursor: pointer;
+.grid2x2 > div {
+  background-color: #1d8954;
+  font-size: 2vw;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-basis: calc(50% - 40px);
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grid2x2 > div:hover,
+#startButton:hover {
+  background-color: #187448;
+  cursor: pointer;
 }
 
 #song_text {
-    text-align: center;
-    font-size: 3vw;
+  text-align: center;
+  font-size: 3vw;
 }
