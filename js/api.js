@@ -158,11 +158,7 @@ var score = 0;
 function callQuestion(id = "option_1") {
   if (document.getElementById(id).innerHTML == correct_artist) {
     score += 1;
-    setTimeout();
   }
-  setTimeout(() => {
-    console.log("this is the first message");
-  }, 1000);
   fetch("https://api.spotify.com/v1/me/tracks?market=CA&limit=50", {
     method: "GET",
     headers: {
