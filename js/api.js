@@ -164,11 +164,12 @@ function callQuestion(id = "option_1") {
     document.getElementById(id).innerHTML == correct_track
   ) {
     score += 1;
+  } else {
+    console.log("Wrong");
   }
 
   // Determine which of the 3 questions are chosen
   let randomQuestion = getRandomNum(1, 4);
-  console.log(randomQuestion);
   if (randomQuestion == 1) {
     whichArtist();
   } else if (randomQuestion == 2) {
